@@ -2,10 +2,12 @@ PATH
   remote: ../bloc_works
   specs:
     bloc_works (0.1.0)
+      erubis (~> 2.7)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    erubis (2.7.0)
     rack (1.6.5)
 
 PLATFORMS
@@ -16,4 +18,4 @@ DEPENDENCIES
   rack (~> 1.6)
 
 BUNDLED WITH
-   1.14.5
+   1.14.6
