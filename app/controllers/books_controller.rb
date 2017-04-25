@@ -11,7 +11,7 @@ class BooksController < BlocWorks::Controller
   end
   
   def show
-    @book = Book.find(4)
+    @book = Book.find(1)
     render :show, book: @book
   end
   
