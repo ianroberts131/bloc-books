@@ -15,6 +15,11 @@ class BooksControllerTest < Test::Unit::TestCase
     assert_match "Eloquent Ruby", last_response.body
   end
   
+  def test_index
+    get '/books'
+    assert last_response.ok?
+  end
+  
   def test_book_show
     get '/books/show'
     assert last_response.ok?

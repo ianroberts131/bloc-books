@@ -3,21 +3,18 @@ class BooksController < BlocWorks::Controller
   def welcome
     @book = Book.new
     @book.name = 'Eloquent Ruby'
-    render :welcome, book: @book
   end
   
   def index
-    render :index, books: Book.all
+    @books = Book.all
   end
   
   def show
     @book = Book.find(params['id'])
-    render :show, book: @book
   end
   
   def new
     @book = Book.new
-    render :new
   end
   
   def create
