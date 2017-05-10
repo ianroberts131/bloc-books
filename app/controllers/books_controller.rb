@@ -19,27 +19,23 @@ class BooksController < BlocWorks::Controller
   
   def create
     puts "The params are: #{params.inspect}"
-    @book = Book.create(name: params["book"]["name"], author: params["book"]["author"], pages: params["book"]["pages"] )
-    if @book.save
-      redirect_to "books/#{@book.id}"
-    else
-      redirect_to "books/new"
-    end
+    @book = Book.create(name: params["name"], author: params["author"], pages: params["pages"] )
+    redirect_to "/books/#{@book.id}"
   end
   
   def edit
     @book = Book.find(params['id'])
-    
-    if @book.save
-      redirect_to("http://www.google.com")
-    else
-      redirect_to("http://www.yahoo.com")
-    end
   end
   
   def update
+    @book = Book.find(params['id'])
+    @book.update_attributes(name: params["name"], author: params["author"], pages: params["pages"])
+    redirect_to "/books/#{@book.id}"
   end
   
   def destroy
+    @book = Book.find(params['id'])
+    @book.destroy
+    redirect_to "/books"
   end
 end

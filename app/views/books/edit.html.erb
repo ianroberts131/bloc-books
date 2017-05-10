@@ -1,2 +1,17 @@
 <h1>woot woot!</h1>
 
+<form action="/books/<%=@book.id%>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  Book Title: <br>
+  <input type="text" name="name" value="<%= @book.name %>"><br>
+  Book Author: <br>
+  <input type="text" name="author" value="<%= @book.author %>"><br>
+  Book Page Count: <br>
+  <input type="integer" name="pages" value=<%= @book.pages %>><br>
+  <input type="submit" value="Submit">
+</form>
+
+<form action="/books/<%=@book.id%>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
